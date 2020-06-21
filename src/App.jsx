@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Paginator from './Paginator';
+import Listening from './Listening';
+import { speechText } from './modules/WebSpeechApi'
 
 const sentences = ['How do you know Mr Smith?', 'I am aho', 'You are aho']
 
@@ -9,28 +10,28 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentPage: 1,
-      showAnswer: false,
+      isShowSentence: false,
     }
   }
 
-  handleNext() {
+  handleNextSentence() {
     this.setState({currentPage: this.state.currentPage+1})
-    this.setState({showAnswer: false})
+    this.setState({isShowSentence: false})
+    speechText(sentences[this.state.currentPage])
   }
 
-  handleShowAnswer() {
-    this.setState({showAnswer: true})
+  handleShowSentence() {
+    this.setState({isShowSentence: true})
   }
 
   render() {
     return (
       <div>
-        <Paginator 
+        <Listening
           currentPage={this.state.currentPage}
-          pageList={this.state.pageList}
-          isShowAnswer={this.state.showAnswer}
-          handleNext={e => this.handleNext(e)}
-          handleShowAnswer={e => this.handleShowAnswer(e)}
+          isShowSentence={this.state.isShowSentence}
+          handleNextSentence={() => this.handleNextSentence()}
+          handleShowSentence={() => this.handleShowSentence()}
           sentences={sentences}
         />
       </div>
