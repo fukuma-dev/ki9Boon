@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PlayButton } from './PlayButton'
+import { SpeechButton } from './SpeechButton'
 
 class Listening extends React.Component {
   isShowListening = this.props.currentPage <= this.props.sentences.length
@@ -15,7 +15,7 @@ class Listening extends React.Component {
             </span>
           </p>
         </div>
-        <PlayButton text={this.props.sentences[this.props.currentPage-1]}/>
+        <SpeechButton text={this.props.sentences[this.props.currentPage-1]} buttonName="検索"/>
         <button onClick={this.props.handleShowSentence}>答えを見る</button>
         <button onClick={this.props.handleNextSentence}>次の問題へ</button>
       </div>
