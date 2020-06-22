@@ -1,6 +1,14 @@
 import React from 'react';
 import Listening from './Listening';
 import { speechText } from './modules/WebSpeechApi'
+import styled from 'styled-components'
+
+const Layout = styled.div`
+  width: 350px;
+  margin: 50px auto;
+  padding: 20px;
+  border: solid 3px #c09e90;
+`
 
 export class Lesson extends React.Component {
   constructor(props) {
@@ -23,7 +31,7 @@ export class Lesson extends React.Component {
 
   render() {
     return (
-      <div>
+      <Layout>
         <Listening
           currentPage={this.state.currentPage}
           isShowSentence={this.state.isShowSentence}
@@ -31,7 +39,7 @@ export class Lesson extends React.Component {
           handleShowSentence={() => this.handleShowSentence()}
           sentences={this.props.sentences}
         />
-      </div>
+      </Layout>
     )  
   }
 }
