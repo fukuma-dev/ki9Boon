@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { SpeechButton } from './SpeechButton'
 import { speechText } from './modules/WebSpeechApi'
 import styled from 'styled-components'
@@ -32,11 +32,11 @@ class Listening extends React.Component {
   }
 }
 
-Listening.propTypes = {
-  currentPage: PropTypes.number.isRequired,
-  isShowSentence: PropTypes.bool.isRequired,
-  handleNextSentence: PropTypes.func.isRequired,
-  handleShowSentence: PropTypes.func.isRequired,
-};
+// Listening.propTypes = {
+//   currentPage: PropTypes.number.isRequired,
+//   isShowSentence: PropTypes.bool.isRequired,
+//   handleNextSentence: PropTypes.func.isRequired,
+//   handleShowSentence: PropTypes.func.isRequired,
+// };
 
 export default Listening;

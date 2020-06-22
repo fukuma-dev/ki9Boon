@@ -13,12 +13,10 @@ const Title = styled.h1`
   color: #f4f5f7;
 `
 
-export class Header extends React.Component {
-  render() {
-    return (
-      <TitleArea>
-        <Title>{this.props.headerTitle}</Title>
-      </TitleArea>
-    )
-  }
+export function Header(props) {
+  return (
+    <TitleArea>
+      <Title>{props.headerTitle}</Title>
+    </TitleArea>
+  )
 }
